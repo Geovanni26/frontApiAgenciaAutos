@@ -1,0 +1,28 @@
+<div class="container">
+    <form>
+        <h5 style="background: cadetblue; color:aliceblue">Capturar Datos, los campos con (*) son obligatorios</h5>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">ID *</label>
+          <input type="number" class="form-control" name="id" aria-describedby="emailHelp"[(ngModel)]="marca.id">
+          <div id="emailHelp" class="form-text">Ingrese el valor unico de registro</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">NOMBRE  *</label>
+            <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp"[(ngModel)]="marca.nombre">
+            <div id="emailHelp" class="form-text">Ingrese el nombre de la marca</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">ORIGEN *</label>
+            <input type="text" class="form-control" name="origen" aria-describedby="emailHelp" [(ngModel)]="marca.origen">
+            <div id="emailHelp" class="form-text">Ingrese el pais de origen</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">ESLOGAN </label>
+            <input type="text" class="form-control" name="eslogan" aria-describedby="emailHelp"[(ngModel)]="marca.eslogan">
+            <div id="emailHelp" class="form-text">Ingrese el eslogan</div>
+          </div>
+         
+          
+        <button type="submit" class="btn btn-primary" (click)="guardar()">Guardar</button>
+      </form>
+</div>

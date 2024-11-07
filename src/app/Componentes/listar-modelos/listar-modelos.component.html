@@ -1,0 +1,33 @@
+<div class="container">
+    <h5 style= "background-color:  cadetblue; color:aliceblue"  >LISTA DE MODELOS</h5>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">MODELO</th>
+            <th scope="col">MARCA</th>
+            <th scope="col">TIPO</th>
+            <th scope="col">PRECIO</th>
+            <th scope="col">FECHA DE LANZ</th>
+            <th scope="col">EDITAR</th>
+            <th scope="col">ELIMINAR</th>
+
+
+
+          </tr>
+        </thead>
+        <tbody>
+            <!--Ciclo-->
+          <tr *ngFor="let m of listarModelos">
+            <th scope="row">{{m.id}}</th>
+            <td>{{m.nombre}}</td>
+            <td>{{m.marca.nombre}}</td>
+            <td>{{m.tipo}}</td>
+            <td>{{m.precio}}</td>
+            <td>{{m.fechaLanz}}</td>
+            <td><a class="btn btn-outline-warning"><span class="material-icons" (click)="abrirCompEditarMod(m)" >autorenew</span></a></td>
+            <td><a class="btn btn-outline-danger"><span class="material-icons" (click)="abrirCompEliminar(m)">delete_outline</span></a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

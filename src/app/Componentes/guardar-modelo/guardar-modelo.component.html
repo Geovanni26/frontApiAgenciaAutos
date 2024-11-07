@@ -1,0 +1,43 @@
+<div class="container">
+    <form>
+        <h5 style="background: cadetblue; color:aliceblue">Capturar Datos de Modeloos, los campos con (*) son obligatorios</h5>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">ID *</label>
+          <input type="number" class="form-control" name="id" aria-describedby="emailHelp" [(ngModel)]="modelo.id">
+          <div id="emailHelp" class="form-text">Ingrese el valor unico de registro</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">NOMBRE  *</label>
+            <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp" [(ngModel)]="modelo.nombre">
+            <div id="emailHelp" class="form-text">Ingrese el nombre del modelo</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">TIPO *</label>
+            <input type="text" class="form-control" name="tipo" aria-describedby="emailHelp" [(ngModel)]="modelo.tipo">
+            <div id="emailHelp" class="form-text">Ingrese el tipo (Estandar o Automático)</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">PRECIO *</label>
+            <input type="number" class="form-control" name="precio" aria-describedby="emailHelp" [(ngModel)]="modelo.precio">
+            <div id="emailHelp" class="form-text">Ingrese el precio</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">SELECCIONE FECHA DE LANZAMIENTO *</label>
+            <input type="date" class="form-control" name="fechaLanz" aria-describedby="emailHelp" [(ngModel)]="modelo.fechaLanz">
+            <div id="emailHelp" class="form-text">Ingrese la fecha de lanzamiento</div>
+          </div>
+          <div class="mb3">
+            <label for="exampleInputEmail1" class="form-label">Marca*</label>
+            <select name="idMarca" class="form-select" aria-label="Default select example" [(ngModel)]="marca.id">
+                <option selected disabled value="">Seleccione una marca:</option>
+                <option *ngFor="let m of listaMarcas" [ngValue]="m.id">{{m.nombre}}</option>
+
+              </select>
+
+          </div>
+
+         <br>
+          
+        <button type="submit" class="btn btn-primary" (click)="guardar()" >Guardar</button>
+      </form>
+</div>

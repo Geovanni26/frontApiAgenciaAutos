@@ -1,0 +1,35 @@
+<div class="container">
+    <form>
+        <h5 style="background: cadetblue; color:aliceblue">Editar Datos de Modelos, los campos con (*) son obligatorios</h5>
+        <div class="mb-3">
+          <label class="form-label">ID *</label>
+          <input type="number" class="form-control" name="id" [(ngModel)]="modelo.id" disabled>
+          <div class="form-text">Identificador no editable</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">NOMBRE *</label>
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="modelo.nombre">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TIPO *</label>
+            <input type="text" class="form-control" name="tipo" [(ngModel)]="modelo.tipo">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PRECIO *</label>
+            <input type="number" class="form-control" name="precio" [(ngModel)]="modelo.precio">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">FECHA DE LANZAMIENTO *</label>
+            <input type="date" class="form-control" name="fechaLanz" [(ngModel)]="modelo.fechaLanz">
+        </div>
+        <div class="mb3">
+            <label class="form-label">Marca *</label>
+            <select name="idMarca" class="form-select" [(ngModel)]="modelo.marca.id">
+                <option selected disabled value="">Seleccione una marca:</option>
+                <option *ngFor="let m of listaMarcas" [ngValue]="m.id">{{m.nombre}}</option>
+            </select>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" (click)="editar()">Actualizar</button>
+    </form>
+</div>
